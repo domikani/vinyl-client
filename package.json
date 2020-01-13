@@ -28,7 +28,7 @@
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^4.0.0",
     "font-awesome": "^4.7.0",
-    "jquery": "^1.12.4",
+    "jquery": "^3.4.1",
     "ng-pipe-filter": "^1.0.6",
     "ngx-filter-pipe": "^2.1.2",
     "ngx-pipes": "^2.6.0",
