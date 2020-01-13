@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12  mt-2 mb-4">
+      <h1 class="text-center" style="font-family: FontAwesome">New Entries</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3 mb-3" *ngFor="let i of lastinsert">
+
+        <a [routerLink]=" '/products/' + i._id">
+          <img [src]="i.photo" class="card-img-top" alt="...">
+        </a>
+        <div>
+          <h6 class="text-md-right mt-1">{{i.title}}</h6>
+          <h5 class="text-md-right" style="color: firebrick">{{i.price}}€</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 mt-4">
+      <img [src]="product.photo" class="img-fluid"/>
+    </div>
+    <div class="col-6 mt-4">
+      <h2>{{product.title}}</h2>
+      <h6><strong>Artist: </strong>{{product.artist}}</h6>
+      <h6><strong>Record Label: </strong>{{product.recordLabel}}</h6>
+      <h4 style="color: firebrick">{{product.price}}&euro;</h4>
+      <p class="text-justify">{{product.description}}</p>
+      <div><strong>Type:</strong> {{product.type}}, <strong>Release Date:</strong> {{product.releaseDate}}</div>
+
+
+    </div>
+  </div>
+</div>

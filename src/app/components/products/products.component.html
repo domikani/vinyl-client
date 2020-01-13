@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-2 mb-4 ">
+      <h1 class="text-center" style="font-family: FontAwesome">
+        Vinyls and Records
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3" *ngFor="let p of products">
+      <a style="color: black"  [routerLink]="'/products/' + p._id">
+        <img [src]="p.photo" class="img-fluid"/>
+        <div class="text-right"><h6>{{p.title}}</h6></div>
+
+      </a>
+      <div class="text-right" style="color: firebrick"><h5>{{p.price}}&euro;</h5></div>
+
+
+    </div>
+  </div>
+</div>

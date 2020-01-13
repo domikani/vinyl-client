@@ -1,0 +1,65 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-6">
+      <h2 style="font-family: FontAwesome" class="text-left mt-2">{{contact.title}}</h2>
+      <p style="font-family: FontAwesome" class="text-justify">{{contact.paragraph}}</p>
+      <form action="action_page.php">
+
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Greece</option>
+          <option value="australia">London</option>
+          <option value="australia">Paris</option>
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+        <input type="submit" value="Submit">
+
+      </form>
+      <h5 style="font-family: FontAwesome" class="mt-3">Contact Info</h5>
+      <h6 class="text-left "><fa name="envelope"></fa><span class="p-2">{{contact.email}}</span> </h6>
+      <h6 class="text-left"><fa name="phone" ></fa><span class="p-2">{{contact.phone}}</span> </h6>
+
+
+    </div>
+    <div class="col-6 mt-2">
+      <h2 style="font-family: FontAwesome"> Where you can find us</h2>
+      <agm-map
+        [latitude]="center.lat"
+        [longitude]="center.lng"
+        [zoom] = mapZoom
+        [mapTypeId]="'roadmap'"
+
+
+      >
+        <agm-marker
+          *ngFor="let dep of contact.departments "
+          [latitude]="dep.coordinates.latitude"
+          [longitude]="dep.coordinates.longitude"
+          [title]="dep.name"
+
+
+        >
+          <agm-info-window>
+            <h6>{{dep.name}}</h6>
+          </agm-info-window>
+        </agm-marker>
+
+      </agm-map>
+
+    </div>
+
+
+  </div>
+</div>
