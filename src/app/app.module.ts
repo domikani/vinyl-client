@@ -7,6 +7,7 @@ import {AgmCoreModule} from '@agm/core';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import {FilterPipeModule} from 'ngx-filter-pipe';
 import {HttpClientModule} from '@angular/common/http';
+import {NgxWebstorageModule} from 'ngx-webstorage';
 
 import {AppComponent} from './app.component';
 
@@ -20,6 +21,7 @@ import {ContactComponent} from './components/contact/contact.component';
 import {AboutComponent} from './components/about/about.component';
 
 import {NewentriesComponent} from './components/newentries/newentries.component';
+import {CartComponent} from './components/cart/cart.component';
 
 const routes = [
   {
@@ -45,6 +47,10 @@ const routes = [
   {
     path: 'newEntries',
     component: NewentriesComponent
+  },
+  {
+    path: 'cart',
+    component: CartComponent
   }
 ];
 
@@ -60,7 +66,9 @@ const routes = [
     ContactComponent,
     AboutComponent,
 
-    NewentriesComponent
+    NewentriesComponent,
+
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +81,9 @@ const routes = [
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
       apiKey: ''
-    })
+    }),
+    NgxWebstorageModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]
