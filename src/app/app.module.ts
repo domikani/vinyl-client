@@ -73,7 +73,6 @@ const routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    BrowserModule,
     AngularFontAwesomeModule,
     FormsModule,
     FilterPipeModule,

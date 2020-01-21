@@ -10,7 +10,8 @@
       <h4 style="color: firebrick">{{product.price}}&euro;</h4>
       <p class="text-justify">{{product.description}}</p>
       <div><strong>Type:</strong> {{product.type}}, <strong>Release Date:</strong> {{product.releaseDate}}</div>
-      <button (click)="addToCart(product._id)" class="btn btn-success btn-block mt-4">Add to cart</button>
+      <div class="mt-3">
+        <button class="btn btn-outline-info mt-2" (click)="addToCart(product._id)">Add to Card</button></div>
 
 
     </div>

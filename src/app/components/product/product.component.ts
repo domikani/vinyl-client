@@ -14,6 +14,8 @@ export class ProductComponent implements OnInit {
   @LocalStorage('cart')
   public cart;
 
+  public product: any = {};
+
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient

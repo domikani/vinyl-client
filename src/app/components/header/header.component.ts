@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {LocalStorageService} from 'ngx-webstorage';
+
 import {LocalStorage} from 'ngx-webstorage';
 
 @Component({
@@ -15,13 +14,9 @@ export class HeaderComponent implements OnInit {
 
   public cart;
 
-  constructor(
-    private http: HttpClient,
-  ) {
-  }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }
 
 

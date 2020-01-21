@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 @Component({
@@ -8,20 +8,17 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ProductsComponent implements OnInit {
   public products: any = [];
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit() {
-    this.http.get('http://localhost:3000/products').subscribe( response => {
+    this.http.get('http://localhost:3000/products').subscribe(response => {
       this.products = response;
 
     });
   }
 
-  randomOrder(products) {
-    this.products.sort(() => {
-      return .5 - Math.random();
-    });
-  }
 
 }
 

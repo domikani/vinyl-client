@@ -19,17 +19,21 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     const cart = this.ls.retrieve('cart');
     if (cart && cart.length > 0) {
-      this.getCartProducts();
+      this.getCartProducts(cart);
     }
 
   }
-
-  public getCartProducts() {
-    this.http.post<any[]>('http://localhost:3000/products/cart', {productIds: productIds})
-      .subscribe((products = > {
-        this.products = products;
-  });
-
+  public getCartProducts(productIds: string[]) {
+    this.http.post<any[]>('http://localhost:3000/products/cart', { productIds: productIds}).subscribe( products => {
+      this.products = products;
+    });
   }
 
+  public printGrandTotal() {
+    let total = 0;
+    this.products.forEach( product => {
+      total = total + (product.price *1);
+    });
+    return total;
+  }
 }
