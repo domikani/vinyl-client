@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {LocalStorage} from 'ngx-webstorage';
+import {IProduct} from '../../interfaces/IProducts';
 
 @Component({
   selector: 'app-product',
@@ -9,12 +10,12 @@ import {LocalStorage} from 'ngx-webstorage';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  public product: any = {};
+
 
   @LocalStorage('cart')
   public cart;
 
-  public product: any = {};
+  public product: IProduct[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -24,7 +25,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.http.get('http://localhost:3000/products/' + params.productId)
+      this.http.get<IProduct[]>('http://localhost:3000/products/' + params.productId)
         .subscribe(response => {
           this.product = response;
         });
